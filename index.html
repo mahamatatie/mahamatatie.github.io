@@ -1,124 +1,283 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="محمد عطية ليمان - صانع محتوى ثقافي وإسلامي">
 <title>محمد عطية ليمان | منصة ثقافية</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-:root{--gold:#C9A84C;--gold-light:#E8C97A;--dark:#0D0D0D;--dark-2:#161410;--dark-3:#1E1A14;--warm-white:#F7F0E3;--text-muted:#9A8B72;--border:rgba(201,168,76,0.2)}
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--dark);color:var(--warm-white);font-family:'Tajaw
-  <body>
-<nav id="navbar">
-<a href="#" class="nav-logo">م • ع • ل</a>
-<ul class="nav-links">
-<li><a href="#about">من أنا</a></li>
-<li><a href="#content">المحتوى</a></li>
-<li><a href="#skills">المهارات</a></li>
-<li><a href="#contact">التواصل</a></li>
-</ul>
+:root{--gold:#C9A84C;--dark:#0D0D0D;--dark2:#161410;--white:#F7F0E3;--muted:#9A8B72;--border:rgba(201,168,76,0.2)}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:'Tajawal',sans-serif;overflow-x:hidden}
+a{text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:99;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.95);border-bottom:1px solid var(--border)}
+.logo{font-family:'Amiri',serif;font-size:1.3rem;color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);font-size:0.9rem;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;background:radial-gradient(ellipse 80% 50% at 50% 20%,rgba(201,168,76,0.1),transparent),var(--dark)}
+.hero-inner{max-width:800px}
+.bismillah{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold);opacity:0.8;margin-bottom:2rem;display:block}
+.divider{width:80px;height:1px;background:linear-gradient(to left,transparent,var(--gold),transparent);margin:0 auto 2rem}
+.hero h1{font-family:'Amiri',serif;font-size:4.5rem;font-weight:700;line-height:1.1;margin-bottom:0.5rem}
+.hero h1 span{color:var(--gold);display:block}
+.hero-sub{color:var(--muted);font-size:1.1rem;letter-spacing:2px;margin-bottom:2rem;font-weight:300}
+.hero-quote{font-family:'Amiri',serif;font-size:1.1rem;color:#F5E6C0;opacity:0.75;font-style:italic;line-height:2;margin-bottom:2.5rem}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn1{padding:0.8rem 2rem;background:linear-gradient(135deg,#C9A84C,#E8C97A);color:#0D0D0D;font-family:'Tajawal',sans-serif;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.3s}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.3)}
+.btn2{padding:0.8rem 2rem;background:transparent;color:var(--gold);border:1px solid var(--gold);font-family:'Tajawal',sans-serif;font-size:0.95rem;cursor:pointer;transition:all 0.3s}
+.btn2:hover{background:rgba(201,168,76,0.1)}
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:3.5rem}
+.sec-tag{font-size:0.75rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:0.8rem}
+.sec-title{font-family:'Amiri',serif;font-size:2.5rem;color:var(--white)}
+.sec-line{width:50px;height:2px;background:linear-gradient(to left,transparent,var(--gold));margin:1rem auto 0}
+.sep{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:4rem;align-items:center}
+.emblem{width:260px;height:260px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(201,168,76,0.07),transparent);margin:0 auto}
+.emblem span{font-family:'Amiri',serif;font-size:4.5rem;color:var(--gold)}
+.about-text h3{font-family:'Amiri',serif;font-size:1.7rem;color:var(--gold);margin-bottom:1.2rem}
+.about-text p{font-size:0.95rem;line-height:2.1;color:#C4B89A;margin-bottom:1rem;font-weight:300}
+.tags{display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:1.5rem}
+.tag{padding:0.4rem 1rem;border:1px solid var(--border);color:var(--gold);font-size:0.82rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.card{background:var(--dark2);padding:2.5rem 2rem;transition:background 0.3s;position:relative;overflow:hidden}
+.card:hover{background:#1E1A14}
+.card-icon{font-size:2.2rem;margin-bottom:1.2rem;display:block}
+.card h3{font-family:'Amiri',serif;font-size:1.3rem;color:var(--white);margin-bottom:0.8rem}
+.card p{font-size:0.88rem;color:var(--muted);line-height:1.9;font-weight:300}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.skill-group h3{font-family:'Amiri',serif;font-size:1.2rem;color:var(--gold);margin-bottom:1.5rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border)}
+.skill{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(201,168,76,0.05)}
+.skill span{font-size:0.9rem;color:#C4B89A}
+.bar-wrap{width:130px;height:2px;background:rgba(201,168,76,0.1)}
+.bar{height:100%;background:linear-gradient(to left,#E8C97A,#C9A84C)}
+.contact-inner{max-width:650px;margin:0 auto;text-align:center}
+.contact-quote{font-family:'Amiri',serif;font-size:1.2rem;color:#F5E6C0;opacity:0.7;line-height:2;font-style:italic;margin-bottom:2.5rem}
+.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.clink{display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:1.2rem 1.5rem;border:1px solid var(--border);background:var(--dark2);transition:all 0.3s;min-width:110px}
+.clink:hover{border-color:var(--gold);transform:translateY(-3px)}
+.clink-icon{font-size:1.6rem}
+.clink-label{font-size:0.75rem;color:var(--muted);letter-spacing:1px}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.8rem;color:var(--muted)}
+footer span{color:var(--gold)}
+@media(max-width:768px){nav{padding:0.8rem 1rem}.nav-links{display:none}.hero h1{font-size:2.8rem}.about-grid{grid-template-columns:1fr}.emblem{display:none}.cards{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">م • ع • ل</a>
+  <ul class="nav-links">
+    <li><a href="#about">من أنا</a></li>
+    <li><a href="#content">المحتوى</a></li>
+    <li><a href="#skills">المهارات</a></li>
+    <li><a href="#contact">التواصل</a></li>
+  </ul>
 </nav>
+
 <div class="hero">
-<div class="hero-content">
-<p class="hero-bismillah">﷽</p>
-<div class="hero-divider"></div>
-<h1 class="hero-name">محمد عطية<span>ليمان</span></h1>
-<p class="hero-title">صانع محتوى ثقافي وإسلامي | طالب جامعي</p>
-<p class="hero-quote">"العلم نور، والأدب روح، والثقافة جسر بين الأمس واليوم"</p>
-<div class="hero-cta">
-<a href="#content" class="btn-primary">استكشف المحتوى</a>
-<a href="#contact" class="btn-secondary">تواصل معي</a>
+  <div class="hero-inner">
+    <span class="bismillah">﷽</span>
+    <div class="divider"></div>
+    <h1>محمد عطية <span>ليمان</span></h1>
+    <p class="hero-sub">صانع محتوى ثقافي وإسلامي &nbsp;|&nbsp; طالب جامعي</p>
+    <p class="hero-quote">"العلم نور، والأدب روح، والثقافة جسر بين الأمس واليوم"</p>
+    <div class="btns">
+      <a href="#content" class="btn1">استكشف المحتوى</a>
+      <a href="#contact" class="btn2">تواصل معي</a>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-  <section id="about">
-<div class="section-header reveal">
-<span class="section-tag">التعريف</span>
-<h2 class="section-title">من أنا؟</h2>
-<div class="section-line"></div>
+
+<hr class="sep">
+<section id="about">
+  <div class="sec-head">
+    <span class="sec-tag">التعريف</span>
+    <h2 class="sec-title">من أنا؟</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="emblem"><span>م ع</span></div>
+    <div class="about-text">
+      <h3>مثقف عربي مسلم</h3>
+      <p>أنا محمد عطية ليمان، صانع محتوى ثقافي وإسلامي وطالب جامعي أسعى إلى بناء حضور رقمي احترافي يجمع بين الثقافة الإسلامية الأصيلة والأدب العربي الرفيع والمعرفة العامة الواسعة.</p>
+      <p>أعمل على إنشاء هوية رقمية قوية تحمل طابعاً هادئاً وفخماً يعكس العلم والوعي، مع اهتمام واضح بجمال التصميم ودقة التفاصيل.</p>
+      <div class="tags">
+        <span class="tag">الثقافة الإسلامية</span>
+        <span class="tag">الأدب العربي</span>
+        <span class="tag">البلاغة</span>
+        <span class="tag">المحتوى الرقمي</span>
+        <span class="tag">الهوية البصرية</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="content">
+  <div class="sec-head">
+    <span class="sec-tag">محاور العمل</span>
+    <h2 class="sec-title">مجالات المحتوى</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="cards">
+    <div class="card"><span class="card-icon">🕌</span><h3>الثقافة الإسلامية</h3><p>الحديث عن القيم الإسلامية والصدق والأمانة والعلم والوعي بأسلوب عصري ومؤثر.</p></div>
+    <div class="card"><span class="card-icon">📜</span><h3>الأدب العربي</h3><p>الاهتمام باللغة العربية الفصحى والبلاغة والشعر وإبراز جمال اللغة العربية وقوتها.</p></div>
+    <div class="card"><span class="card-icon">🌍</span><h3>الثقافة العامة</h3><p>نشر المعرفة العامة والقصص الواقعية والكتب والموضوعات الفكرية التي توسع مدارك القارئ.</p></div>
+    <div class="card"><span class="card-icon">✍️</span><h3>المقالات الفكرية</h3><p>كتابة مقالات معمقة تتناول قضايا الفكر والهوية والحضارة بلغة رفيعة وأسلوب مؤثر.</p></div>
+    <div class="card"><span class="card-icon">🎨</span><h3>الهوية البصرية</h3><p>إنشاء هويات بصرية احترافية وشعارات راقية مع الاهتمام بدقة التفاصيل والتناسق الجمالي.</p></div>
+    <div class="card"><span class="card-icon">📱</span><h3>الحضور الرقمي</h3><p>بناء حضور رقمي متكامل يجمع بين المحتوى القيّم والهوية الاحترافية والتأثير الحقيقي.</p></div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="skills">
+  <div class="sec-head">
+    <span class="sec-tag">الكفاءات</span>
+    <h2 class="sec-title">المهارات</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>المهارات الإبداعية</h3>
+      <div class="skill"><span>الكتابة الثقافية والإسلامية</span><div class="bar-wrap"><div class="bar" style="width:95%"></div></div></div>
+      <div class="skill"><span>اللغة العربية والبلاغة</span><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></div>
+      <div class="skill"><span>صناعة المحتوى الرقمي</span><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></div>
+      <div class="skill"><span>التصميم البصري</span><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></div>
+    </div>
+    <div class="skill-group">
+      <h3>المهارات التقنية</h3>
+      <div class="skill"><span>تحسين محركات البحث SEO</span><div class="bar-wrap"><div class="bar" style="width:82%"></div></div></div>
+      <div class="skill"><span>إدارة الهوية البصرية</span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+      <div class="skill"><span>إدارة منصات التواصل</span><div class="bar-wrap"><div class="bar" style="width:87%"></div></div></div>
+      <div class="skill"><span>تنسيق النصوص</span><div class="bar-wrap"><div class="bar" style="width:92%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+<section id="contact">
+  <div class="contact-inner">
+    <div class="sec-head">
+      <span class="sec-tag">التواصل</span>
+      <h2 class="sec-title">تواصل معي</h2>
+      <div class="sec-line"></div>
+    </div>
+    <p class="contact-quote">"كل رحلة عظيمة تبدأ بحوار صادق"</p>
+    <div class="contact-links">
+      <a href="mailto:alatia315@gmail.com" class="clink"><span class="clink-icon">✉️</span><span class="clink-label">البريد</span></a>
+      <a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="clink"><span class="clink-icon">💼</span><span class="clink-label">LinkedIn</span></a>
+      <a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="clink"><span class="clink-icon">🎵</span><span class="clink-label">تيك توك</span></a>
+      <a href="https://youtube.com/@atielimane" target="_blank" class="clink"><span class="clink-icon">▶️</span><span class="clink-label">يوتيوب</span></a>
+      <a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="clink"><span class="clink-icon">📘</span><span class="clink-label">فيسبوك</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>جميع الحقوق محفوظة © 2025 | <span>محمد عطية ليمان</span></p>
+</footer>
+
+<script>
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(201,168,76,0.3)' : 'rgba(201,168,76,0.2)';
+});
+</script>
+</body>
+</html>
+HTMLEOF
+echo "Done"
+<hr class="sep">
+<section id="about">
+<div class="sec-head">
+<span class="sec-tag">التعريف</span>
+<h2 class="sec-title">من أنا؟</h2>
+<div class="sec-line"></div>
 </div>
 <div class="about-grid">
-<div class="emblem-ring reveal">
-<span class="emblem-initials">م ع</span>
-</div>
-<div class="about-text reveal">
+<div class="emblem"><span>م ع</span></div>
+<div class="about-text">
 <h3>مثقف عربي مسلم</h3>
-<p>أنا محمد عطية ليمان، صانع محتوى ثقافي وإسلامي وطالب جامعي أسعى إلى بناء حضور رقمي احترافي يجمع بين الثقافة الإسلامية الأصيلة، والأدب العربي الرفيع، والمعرفة العامة الواسعة.</p>
-<p>أعمل على إنشاء هوية رقمية قوية تحمل طابعاً هادئاً وفخماً يعكس العلم والوعي، واللغة العربية الرفيعة، مع اهتمام واضح بجمال التصميم ودقة التفاصيل.</p>
-<div class="about-pillars">
-<span class="pillar">الثقافة الإسلامية</span>
-<span class="pillar">الأدب العربي</span>
-<span class="pillar">البلاغة</span>
-<span class="pillar">المحتوى الرقمي</span>
-<span class="pillar">الهوية البصرية</span>
+<p>أنا محمد عطية ليمان، صانع محتوى ثقافي وإسلامي وطالب جامعي أسعى إلى بناء حضور رقمي احترافي يجمع بين الثقافة الإسلامية الأصيلة والأدب العربي الرفيع والمعرفة العامة الواسعة.</p>
+<p>أعمل على إنشاء هوية رقمية قوية تحمل طابعاً هادئاً وفخماً يعكس العلم والوعي، مع اهتمام واضح بجمال التصميم ودقة التفاصيل.</p>
+<div class="tags">
+<span class="tag">الثقافة الإسلامية</span>
+<span class="tag">الأدب العربي</span>
+<span class="tag">البلاغة</span>
+<span class="tag">المحتوى الرقمي</span>
+<span class="tag">الهوية البصرية</span>
 </div>
 </div>
 </div>
 </section>
-  <section id="content">
-<div class="section-header reveal">
-<span class="section-tag">محاور العمل</span>
-<h2 class="section-title">مجالات المحتوى</h2>
-<div class="section-line"></div>
+<hr class="sep">
+<section id="content">
+<div class="sec-head">
+<span class="sec-tag">محاور العمل</span>
+<h2 class="sec-title">مجالات المحتوى</h2>
+<div class="sec-line"></div>
 </div>
-<div class="content-grid">
-<div class="content-card reveal"><span class="card-icon">🕌</span><h3 class="card-title">الثقافة الإسلامية</h3><p class="card-desc">الحديث عن القيم الإسلامية والصدق والأمانة والعلم والوعي بأسلوب عصري ومؤثر.</p></div>
-<div class="content-card reveal"><span class="card-icon">📜</span><h3 class="card-title">الأدب العربي</h3><p class="card-desc">الاهتمام باللغة العربية الفصحى والبلاغة والشعر وإبراز جمال اللغة العربية وقوتها.</p></div>
-<div class="content-card reveal"><span class="card-icon">🌍</span><h3 class="card-title">الثقافة العامة</h3><p class="card-desc">نشر المعرفة العامة والقصص الواقعية والكتب والموضوعات الفكرية التي توسع مدارك القارئ.</p></div>
-<div class="content-card reveal"><span class="card-icon">✍️</span><h3 class="card-title">المقالات الفكرية</h3><p class="card-desc">كتابة مقالات معمقة تتناول قضايا الفكر والهوية والحضارة بلغة رفيعة وأسلوب مؤثر.</p></div>
-<div class="content-card reveal"><span class="card-icon">🎨</span><h3 class="card-title">الهوية البصرية</h3><p class="card-desc">إنشاء هويات بصرية احترافية وشعارات راقية مع الاهتمام بدقة التفاصيل والتناسق الجمالي.</p></div>
-<div class="content-card reveal"><span class="card-icon">📱</span><h3 class="card-title">الحضور الرقمي</h3><p class="card-desc">بناء حضور رقمي متكامل يجمع بين المحتوى القيّم والهوية الاحترافية والتأثير الحقيقي.</p></div>
+<div class="cards">
+<div class="card"><span class="card-icon">🕌</span><h3>الثقافة الإسلامية</h3><p>الحديث عن القيم الإسلامية والصدق والأمانة والعلم والوعي بأسلوب عصري ومؤثر.</p></div>
+<div class="card"><span class="card-icon">📜</span><h3>الأدب العربي</h3><p>الاهتمام باللغة العربية الفصحى والبلاغة والشعر وإبراز جمال اللغة العربية وقوتها.</p></div>
+<div class="card"><span class="card-icon">🌍</span><h3>الثقافة العامة</h3><p>نشر المعرفة العامة والقصص الواقعية والكتب والموضوعات الفكرية التي توسع مدارك القارئ.</p></div>
+<div class="card"><span class="card-icon">✍️</span><h3>المقالات الفكرية</h3><p>كتابة مقالات معمقة تتناول قضايا الفكر والهوية والحضارة بلغة رفيعة وأسلوب مؤثر.</p></div>
+<div class="card"><span class="card-icon">🎨</span><h3>الهوية البصرية</h3><p>إنشاء هويات بصرية احترافية وشعارات راقية مع الاهتمام بدقة التفاصيل والتناسق الجمالي.</p></div>
+<div class="card"><span class="card-icon">📱</span><h3>الحضور الرقمي</h3><p>بناء حضور رقمي متكامل يجمع بين المحتوى القيّم والهوية الاحترافية والتأثير الحقيقي.</p></div>
 </div>
 </section>
+<hr class="sep">
 <section id="skills">
-<div class="section-header reveal">
-<span class="section-tag">الكفاءات</span>
-<h2 class="section-title">المهارات والاهتمامات</h2>
-<div class="section-line"></div>
+<div class="sec-head">
+<span class="sec-tag">الكفاءات</span>
+<h2 class="sec-title">المهارات</h2>
+<div class="sec-line"></div>
 </div>
-<div class="skills-layout">
-<div class="skill-group reveal">
+<div class="skills-grid">
+<div class="skill-group">
 <h3>المهارات الإبداعية</h3>
-<div class="skill-item"><span class="skill-name">الكتابة الثقافية والإسلامية</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
-<div class="skill-item"><span class="skill-name">اللغة العربية والبلاغة</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-<div class="skill-item"><span class="skill-name">صناعة المحتوى الرقمي</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-<div class="skill-item"><span class="skill-name">التصميم البصري</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+<div class="skill"><span>الكتابة الثقافية والإسلامية</span><div class="bar-wrap"><div class="bar" style="width:95%"></div></div></div>
+<div class="skill"><span>اللغة العربية والبلاغة</span><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></div>
+<div class="skill"><span>صناعة المحتوى الرقمي</span><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></div>
+<div class="skill"><span>التصميم البصري</span><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></div>
 </div>
-<div class="skill-group reveal">
+<div class="skill-group">
 <h3>المهارات التقنية</h3>
-<div class="skill-item"><span class="skill-name">تحسين محركات البحث SEO</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
-<div class="skill-item"><span class="skill-name">إدارة الهوية البصرية</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
-<div class="skill-item"><span class="skill-name">إدارة منصات التواصل</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:87%"></div></div></div>
-<div class="skill-item"><span class="skill-name">تنسيق النصوص الاحترافية</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div></div>
+<div class="skill"><span>تحسين محركات البحث SEO</span><div class="bar-wrap"><div class="bar" style="width:82%"></div></div></div>
+<div class="skill"><span>إدارة الهوية البصرية</span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+<div class="skill"><span>إدارة منصات التواصل</span><div class="bar-wrap"><div class="bar" style="width:87%"></div></div></div>
+<div class="skill"><span>تنسيق النصوص</span><div class="bar-wrap"><div class="bar" style="width:92%"></div></div></div>
 </div>
 </div>
 </section>
+<hr class="sep">
 <section id="contact">
 <div class="contact-inner">
-<div class="section-header reveal">
-<span class="section-tag">التواصل</span>
-<h2 class="section-title">تواصل معي</h2>
-<div class="section-line"></div>
+<div class="sec-head">
+<span class="sec-tag">التواصل</span>
+<h2 class="sec-title">تواصل معي</h2>
+<div class="sec-line"></div>
 </div>
-<p class="contact-quote reveal">"كل رحلة عظيمة تبدأ بحوار صادق"</p>
-<div class="contact-links reveal">
-<a href="mailto:alatia315@gmail.com" class="contact-link"><span class="contact-link-icon">✉️</span><span class="contact-link-label">البريد</span></a>
-<a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="contact-link"><span class="contact-link-icon">💼</span><span class="contact-link-label">LinkedIn</span></a>
-<a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="contact-link"><span class="contact-link-icon">🎵</span><span class="contact-link-label">تيك توك</span></a>
-<a href="https://youtube.com/@atielimane" target="_blank" class="contact-link"><span class="contact-link-icon">▶️</span><span class="contact-link-label">يوتيوب</span></a>
-<a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="contact-link"><span class="contact-link-icon">📘</span><span class="contact-link-label">فيسبوك</span></a>
+<p class="contact-quote">"كل رحلة عظيمة تبدأ بحوار صادق"</p>
+<div class="contact-links">
+<a href="mailto:alatia315@gmail.com" class="clink"><span class="clink-icon">✉️</span><span class="clink-label">البريد</span></a>
+<a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="clink"><span class="clink-icon">💼</span><span class="clink-label">LinkedIn</span></a>
+<a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="clink"><span class="clink-icon">🎵</span><span class="clink-label">تيك توك</span></a>
+<a href="https://youtube.com/@atielimane" target="_blank" class="clink"><span class="clink-icon">▶️</span><span class="clink-label">يوتيوب</span></a>
+<a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="clink"><span class="clink-icon">📘</span><span class="clink-label">فيسبوك</span></a>
 </div>
 </div>
 </section>
-<footer><p>جميع الحقوق محفوظة © 2025 | <span>محمد عطية ليمان</span></p></footer>
+<footer>
+<p>جميع الحقوق محفوظة © 2025 | <span>محمد عطية ليمان</span></p>
+</footer>
 <script>
-const navbar=document.getElementById('navbar');
-window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)});
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);observer.unobserve(entry.target)}})},{threshold:0.1});
-reveals.forEach(el=>observer.observe(el));
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>{nav.style.borderBottomColor=window.scrollY>50?'rgba(201,168,76,0.3)':'rgba(201,168,76,0.2)'});
 </script>
 </body>
 </html>
