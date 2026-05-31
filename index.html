@@ -3,293 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="محمد عطية ليمان - منصة ثقافية تهتم بالثقافة الإسلامية والأدب العربي والثقافة العامة">
+<meta name="description" content="محمد عطية ليمان - منصة ثقافية تجمع بين الثقافة الإسلامية والأدب العربي والمعرفة النافعة">
 <title>محمد عطية ليمان | منصة ثقافية</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1A6FA8;--blue-dark:#0D5A8E;--blue-light:#E8F4FD;--blue-mid:#2E86C1;--sky:#87CEEB;--white:#FFFFFF;--off-white:#F8FBFE;--text:#1A2B3C;--text-light:#5A7A9A;--gold:#C9A84C;--border:#D6EAF8;--shadow:rgba(26,111,168,0.12)}
+:root{--gold:#B8860B;--gold-light:#D4A017;--gold-pale:#F5E6C0;--navy:#0A2342;--navy-mid:#1A3A5C;--navy-light:#2E5F8A;--cream:#FAF7F0;--white:#FFFFFF;--text:#1A1A2E;--text-muted:#6B6B8A;--border:#E8DCC8;--shadow:rgba(10,35,66,0.12)}
 html{scroll-behavior:smooth}
-body{background:var(--off-white);color:var(--text);font-family:'Tajawal',sans-serif;overflow-x:hidden}
+body{background:var(--cream);color:var(--text);font-family:'Tajawal',sans-serif;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px var(--shadow)}
-.nav-brand{display:flex;align-items:center;gap:0.8rem}
-.nav-logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.1rem;color:white;font-weight:700}
-.nav-brand-name{font-family:'Amiri',serif;font-size:1.2rem;color:var(--blue-dark);font-weight:700}
-.nav-links{display:flex;gap:0;list-style:none;align-items:center}
-.nav-links a{padding:0.5rem 1.1rem;color:var(--text-light);font-size:0.88rem;font-weight:500;transition:color 0.3s;display:block;border-radius:6px}
-.nav-links a:hover{color:var(--blue);background:var(--blue-light)}
-.nav-search{width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--blue);font-size:1rem;transition:all 0.3s}
-.nav-search:hover{background:var(--blue);color:white}
-.hero{margin-top:70px;min-height:90vh;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(135deg,#0D3B6E 0%,#1A6FA8 50%,#2E86C1 100%)}
-.hero-bg-pattern{position:absolute;inset:0;opacity:0.07;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.8'%3E%3Cpolygon points='30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5'/%3E%3Cpolygon points='30,15 45,22.5 45,37.5 30,45 15,37.5 15,22.5'/%3E%3C/g%3E%3C/svg%3E")}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to left,rgba(13,59,110,0.3),transparent)}
-.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:4rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;padding:0.4rem 1.2rem;border-radius:20px;font-size:0.82rem;margin-bottom:1.5rem;backdrop-filter:blur(10px)}
-.hero h1{font-family:'Amiri',serif;font-size:3.2rem;color:white;line-height:1.2;margin-bottom:1rem}
-.hero h1 span{color:var(--sky);display:block}
-.hero-desc{color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.9;margin-bottom:2rem;font-weight:300}
-.hero-ayah{background:rgba(255,255,255,0.1);border-right:3px solid var(--gold);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin-bottom:2rem}
-.hero-ayah p{font-family:'Amiri',serif;font-size:1.1rem;color:white;line-height:1.8}
-.hero-ayah span{font-size:0.78rem;color:rgba(255,255,255,0.6);display:block;margin-top:0.3rem}
+.page{display:none;animation:fadeIn 0.4s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,35,66,0.97);backdrop-filter:blur(20px);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;border-bottom:1px solid rgba(184,134,11,0.3)}
+.nav-brand{display:flex;align-items:center;gap:0.8rem;cursor:pointer}
+.nav-logo{width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1rem;color:var(--navy);font-weight:700}
+.nav-title{font-family:'Amiri',serif;font-size:1.1rem;color:white;font-weight:700}
+.nav-subtitle{font-size:0.7rem;color:rgba(184,134,11,0.8);display:block;margin-top:-2px}
+.nav-menu{display:flex;gap:0;list-style:none;align-items:center}
+.nav-menu li span{padding:0.5rem 0.9rem;color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.3s;display:block;border-radius:6px;border:none;background:none}
+.nav-menu li span:hover{color:var(--gold-light);background:rgba(184,134,11,0.1)}
+.nav-mobile-btn{display:none;color:white;font-size:1.5rem;cursor:pointer;background:none;border:none}
+.hero{margin-top:68px;min-height:92vh;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(160deg,#071829 0%,#0A2342 40%,#1A3A5C 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='0.6'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,14 66,28 66,52 40,66 14,52 14,28'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:4rem 2.5rem;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;width:100%}
+.hero-eyebrow{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow span{font-size:0.8rem;letter-spacing:3px;color:var(--gold-light);text-transform:uppercase;font-weight:500}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(2.5rem,5vw,4rem);color:white;line-height:1.15;margin-bottom:0.6rem;font-weight:700}
+.hero h1 em{color:var(--gold-light);font-style:normal;display:block}
+.hero-tagline{font-family:'Amiri',serif;font-size:1.1rem;color:rgba(245,230,192,0.8);margin-bottom:1.5rem;letter-spacing:1px}
+.hero-desc{color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:2;margin-bottom:2.5rem;font-weight:300;max-width:500px}
+.hero-ayah{border-right:3px solid var(--gold);padding:1rem 1.2rem;margin-bottom:2.5rem;background:rgba(184,134,11,0.08);border-radius:0 8px 8px 0}
+.hero-ayah p{font-family:'Amiri',serif;font-size:1.2rem;color:var(--gold-pale);line-height:1.8}
+.hero-ayah cite{font-size:0.75rem;color:rgba(255,255,255,0.4);font-style:normal;display:block;margin-top:0.3rem}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{padding:0.85rem 2rem;background:white;color:var(--blue-dark);font-family:'Tajawal',sans-serif;font-weight:700;font-size:0.95rem;border-radius:8px;transition:all 0.3s;border:none;cursor:pointer}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.2)}
-.btn-secondary{padding:0.85rem 2rem;background:transparent;color:white;border:1px solid rgba(255,255,255,0.5);font-family:'Tajawal',sans-serif;font-size:0.95rem;border-radius:8px;transition:all 0.3s;cursor:pointer}
-.btn-secondary:hover{background:rgba(255,255,255,0.1)}
-.hero-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:1.5rem;transition:transform 0.3s}
-.hero-card:hover{transform:translateY(-4px)}
-.hero-card-icon{font-size:2rem;margin-bottom:0.8rem;display:block}
-.hero-card h3{font-family:'Amiri',serif;font-size:1.15rem;color:white;margin-bottom:0.4rem}
-.hero-card p{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.6}
-.hero-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.stats{background:white;padding:2.5rem 3rem;border-bottom:1px solid var(--border)}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
-.stat-num{font-family:'Amiri',serif;font-size:2.2rem;color:var(--blue);font-weight:700;display:block}
-.stat-label{font-size:0.85rem;color:var(--text-light);margin-top:0.3rem}
-.section{padding:5rem 3rem;max-width:1100px;margin:0 auto}
-.section-full{padding:5rem 3rem;background:white}
-.section-full-inner{max-width:1100px;margin:0 auto}
-.sec-head{text-align:center;margin-bottom:3.5rem}
-.sec-tag{display:inline-block;background:var(--blue-light);color:var(--blue);padding:0.3rem 1rem;border-radius:20px;font-size:0.78rem;font-weight:600;letter-spacing:2px;margin-bottom:1rem}
-.sec-title{font-family:'Amiri',serif;font-size:2.3rem;color:var(--text);margin-bottom:0.8rem}
-.sec-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:0.8rem}
-.sec-divider::before,.sec-divider::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,var(--blue),transparent)}
-.sec-divider span{color:var(--gold);font-size:1.2rem}
-.categories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.cat-card{border-radius:16px;overflow:hidden;box-shadow:0 4px 20px var(--shadow);transition:all 0.4s;cursor:pointer}
-.cat-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(26,111,168,0.2)}
-.cat-img{height:200px;position:relative;display:flex;align-items:center;justify-content:center;font-size:4rem}
-.cat-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,59,110,0.7),transparent)}
-.cat-icon-wrap{position:absolute;bottom:-20px;right:50%;transform:translateX(50%);width:48px;height:48px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 15px var(--shadow);border:2px solid var(--blue-light)}
-.cat-body{background:white;padding:2rem 1.5rem 1.5rem;text-align:center}
-.cat-title{font-family:'Amiri',serif;font-size:1.3rem;color:var(--text);margin-bottom:0.6rem;margin-top:0.5rem}
-.cat-desc{font-size:0.85rem;color:var(--text-light);line-height:1.7;margin-bottom:1.2rem}
-.cat-btn{display:inline-flex;align-items:center;gap:0.4rem;color:var(--blue);font-size:0.85rem;font-weight:600;padding:0.5rem 1.2rem;border:1px solid var(--border);border-radius:20px;transition:all 0.3s}
-.cat-btn:hover{background:var(--blue);color:white;border-color:var(--blue)}
-.articles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 15px var(--shadow);transition:all 0.3s}
-.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(26,111,168,0.15)}
-.article-img{height:150px;background:linear-gradient(135deg,var(--blue-light),#D6EAF8);display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
-.article-cat-badge{position:absolute;top:0.6rem;right:0.6rem;padding:0.25rem 0.7rem;border-radius:20px;font-size:0.7rem;font-weight:700;color:white}
-.badge-islamic{background:var(--blue)}
-.badge-arabic{background:#27AE60}
-.badge-general{background:#E67E22}
-.article-body{padding:1.2rem}
-.article-title{font-family:'Amiri',serif;font-size:1rem;color:var(--text);margin-bottom:0.6rem;line-height:1.5}
-.article-date{font-size:0.75rem;color:var(--text-light)}
-.about-strip{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:5rem 3rem}
-.about-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-strip h2{font-family:'Amiri',serif;font-size:2.2rem;color:white;margin-bottom:1.2rem}
-.about-strip p{color:rgba(255,255,255,0.85);font-size:0.95rem;line-height:2;margin-bottom:1rem;font-weight:300}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
-.feature{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:1.2rem;border-radius:10px}
-.feature-icon{font-size:1.5rem;margin-bottom:0.5rem;display:block}
-.feature h4{font-size:0.9rem;color:white;font-weight:600;margin-bottom:0.3rem}
-.feature p{font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.5}
-.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-.clink{display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1.5rem;border:1px solid var(--border);background:white;border-radius:10px;transition:all 0.3s;font-size:0.9rem;color:var(--text-light);font-weight:500;box-shadow:0 2px 8px var(--shadow)}
-.clink:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
-.clink-icon{font-size:1.3rem}
-footer{background:#0D3B6E;padding:3rem;color:rgba(255,255,255,0.7)}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
-.footer-brand h3{font-family:'Amiri',serif;font-size:1.3rem;color:white;margin-bottom:0.8rem}
-.footer-brand p{font-size:0.85rem;line-height:1.8;margin-bottom:1.2rem}
-.footer-social{display:flex;gap:0.8rem}
-.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:0.9rem;transition:all 0.3s;color:white}
-.social-btn:hover{background:var(--blue-mid)}
-.footer-col h4{font-size:0.9rem;color:white;font-weight:600;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.btn-gold{padding:0.85rem 2rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-family:'Tajawal',sans-serif;font-weight:700;font-size:0.9rem;border-radius:8px;transition:all 0.3s;border:none;cursor:pointer}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,134,11,0.35)}
+.btn-outline{padding:0.85rem 2rem;background:transparent;color:white;border:1px solid rgba(255,255,255,0.3);font-family:'Tajawal',sans-serif;font-size:0.9rem;border-radius:8px;transition:all 0.3s;cursor:pointer}
+.btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.hero-visual{display:flex;flex-direction:column;gap:1.2rem}
+.hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.h-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(184,134,11,0.2);border-radius:12px;padding:1.5rem 1.2rem;text-align:center;backdrop-filter:blur(10px);transition:all 0.3s}
+.h-stat:hover{background:rgba(184,134,11,0.1);transform:translateY(-3px)}
+.h-stat-num{font-family:'Amiri',serif;font-size:2rem;color:var(--gold-light);font-weight:700;display:block}
+.h-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:0.2rem}
+.h-quote-card{background:rgba(255,255,255,0.05);border:1px solid rgba(184,134,11,0.15);border-radius:12px;padding:1.5rem;backdrop-filter:blur(10px)}
+.h-quote-card p{font-family:'Amiri',serif;font-size:1.1rem;color:var(--gold-pale);line-height:1.9;text-align:center}
+.h-quote-card span{font-size:0.75rem;color:rgba(255,255,255,0.4);display:block;text-align:center;margin-top:0.5rem}
+.sec-wrap{padding:5rem 2.5rem;max-width:1100px;margin:0 auto}
+.sec-wrap-full{padding:5rem 2.5rem;background:white}
+.sec-wrap-full-inner{max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:4rem}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1rem}
+.sec-eyebrow::before,.sec-eyebrow::after{content:'✦';font-size:0.7rem;color:var(--gold)}
+.sec-eyebrow span{font-size:0.75rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600}
+.sec-title{font-family:'Amiri',serif;font-size:2.4rem;color:var(--text);line-height:1.3}
+.sec-title-white{color:white}
+.sec-underline{width:60px;height:2px;background:linear-gradient(to left,transparent,var(--gold));margin:1rem auto 0}
+.sep-line{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.cat-card{border-radius:20px;overflow:hidden;box-shadow:0 6px 30px var(--shadow);transition:all 0.4s;background:white;cursor:pointer}
+.cat-card:hover{transform:translateY(-8px);box-shadow:0 16px 50px rgba(10,35,66,0.18)}
+.cat-banner{height:220px;position:relative;display:flex;align-items:flex-end;padding:1.5rem}
+.cat-banner-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,35,66,0.9) 0%,rgba(10,35,66,0.3) 60%,transparent 100%)}
+.cat-banner-emoji{position:absolute;top:1.2rem;right:1.2rem;font-size:2.5rem}
+.cat-banner-title{position:relative;z-index:1;font-family:'Amiri',serif;font-size:1.5rem;color:white;font-weight:700}
+.cat-body{padding:1.5rem}
+.cat-desc{font-size:0.88rem;color:var(--text-muted);line-height:1.9;margin-bottom:1.2rem;font-weight:300}
+.cat-btn{display:inline-flex;align-items:center;gap:0.5rem;color:var(--navy-mid);font-size:0.85rem;font-weight:700;padding:0.6rem 1.3rem;border:2px solid var(--border);border-radius:20px;transition:all 0.3s}
+.cat-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.arts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.art-card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 3px 15px var(--shadow);transition:all 0.3s;cursor:pointer}
+.art-card:hover{transform:translateY(-5px);box-shadow:0 10px 35px rgba(10,35,66,0.15)}
+.art-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.art-badge{position:absolute;top:0.7rem;right:0.7rem;padding:0.2rem 0.7rem;border-radius:20px;font-size:0.68rem;font-weight:700;color:white}
+.badge-islamic{background:var(--navy-mid)}
+.badge-arabic{background:#1A6B3C}
+.badge-general{background:#8B4513}
+.badge-library{background:#6B4E8B}
+.art-body{padding:1rem 1.1rem 1.2rem}
+.art-title{font-family:'Amiri',serif;font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;line-height:1.6}
+.art-meta{font-size:0.72rem;color:var(--text-muted);display:flex;gap:0.5rem;align-items:center}
+.art-meta span{background:var(--cream);padding:0.2rem 0.5rem;border-radius:4px}
+.about-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:6rem 2.5rem;position:relative;overflow:hidden}
+.about-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;position:relative}
+.about-avatar{width:280px;height:280px;border-radius:50%;background:linear-gradient(135deg,rgba(184,134,11,0.2),rgba(184,134,11,0.05));border:2px solid rgba(184,134,11,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto}
+.about-avatar-initials{font-family:'Amiri',serif;font-size:5rem;color:var(--gold-light)}
+.about-content h2{font-family:'Amiri',serif;font-size:2rem;color:white;margin-bottom:1.2rem}
+.about-content p{color:rgba(255,255,255,0.8);font-size:0.92rem;line-height:2.1;margin-bottom:1rem;font-weight:300}
+.about-goals{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:1.8rem}
+.goal-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.8rem;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid rgba(184,134,11,0.1)}
+.goal-icon{font-size:1.1rem;flex-shrink:0}
+.goal-text{font-size:0.82rem;color:rgba(255,255,255,0.75);line-height:1.5}
+.quotes-section{background:var(--navy);padding:4rem 2.5rem}
+.quotes-inner{max-width:1100px;margin:0 auto}
+.quote-display{text-align:center;max-width:700px;margin:0 auto;padding:3rem}
+.quote-mark{font-family:'Amiri',serif;font-size:5rem;color:rgba(184,134,11,0.2);line-height:0.5;display:block;margin-bottom:1rem}
+.quote-text{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold-pale);line-height:1.9;margin-bottom:1.5rem}
+.quote-source{font-size:0.85rem;color:rgba(255,255,255,0.4);letter-spacing:2px}
+.quote-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:2rem}
+.quote-dot{width:8px;height:8px;border-radius:50%;background:rgba(184,134,11,0.3);cursor:pointer;transition:all 0.3s;border:none}
+.quote-dot.active{background:var(--gold);transform:scale(1.3)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-info h3{font-family:'Amiri',serif;font-size:1.6rem;color:var(--text);margin-bottom:1rem}
+.contact-info p{color:var(--text-muted);font-size:0.9rem;line-height:2;margin-bottom:2rem}
+.contact-social{display:flex;flex-direction:column;gap:0.8rem}
+.social-item{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;border:1px solid var(--border);border-radius:10px;background:white;transition:all 0.3s;font-size:0.88rem;color:var(--text-muted)}
+.social-item:hover{border-color:var(--gold);color:var(--navy);transform:translateX(-4px)}
+.social-item-icon{font-size:1.3rem;width:30px;text-align:center}
+.contact-form{background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 20px var(--shadow)}
+.contact-form h3{font-family:'Amiri',serif;font-size:1.4rem;color:var(--text);margin-bottom:1.5rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:0.85rem;color:var(--text-muted);margin-bottom:0.4rem;font-weight:500}
+.form-group input,.form-group textarea{width:100%;padding:0.8rem 1rem;border:1px solid var(--border);border-radius:8px;font-family:'Tajawal',sans-serif;font-size:0.9rem;color:var(--text);background:var(--cream);transition:border-color 0.3s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold);background:white}
+.form-group textarea{height:120px;resize:none}
+.btn-submit{width:100%;padding:0.9rem;background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:white;font-family:'Tajawal',sans-serif;font-weight:700;font-size:0.95rem;border:none;border-radius:8px;cursor:pointer;transition:all 0.3s}
+.btn-submit:hover{transform:translateY(-2px)}
+footer{background:#060F1A;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,0.6)}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand-name{font-family:'Amiri',serif;font-size:1.3rem;color:white;margin-bottom:0.5rem}
+.footer-brand-tagline{font-size:0.75rem;color:var(--gold);letter-spacing:1px;margin-bottom:1rem}
+.footer-brand-desc{font-size:0.82rem;line-height:1.9;margin-bottom:1.5rem}
+.footer-social-row{display:flex;gap:0.6rem}
+.fsoc{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:white;transition:all 0.3s;cursor:pointer;border:1px solid rgba(255,255,255,0.1)}
+.fsoc:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.footer-col-title{font-size:0.85rem;color:white;font-weight:700;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(255,255,255,0.08)}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:0.6rem}
-.footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.6);transition:color 0.3s}
-.footer-col ul li a:hover{color:white}
-.footer-bottom{max-width:1100px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center}
-.footer-ayah{font-family:'Amiri',serif;font-size:1rem;color:rgba(255,255,255,0.5)}
-.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.4)}
-@media(max-width:900px){nav{padding:0 1rem}.nav-links{display:none}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:2.2rem}.stats-inner{grid-template-columns:repeat(2,1fr)}.section,.section-full{padding:3rem 1.5rem}.categories-grid{grid-template-columns:1fr}.articles-grid{grid-template-columns:repeat(2,1fr)}.about-strip-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+.footer-col ul li span,.footer-col ul li a{font-size:0.8rem;color:rgba(255,255,255,0.5);cursor:pointer;transition:color 0.3s}
+.footer-col ul li span:hover,.footer-col ul li a:hover{color:var(--gold-light)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center}
+.footer-ayah{font-family:'Amiri',serif;font-size:0.95rem;color:rgba(184,134,11,0.5)}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.3)}
+.art-page-header{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:5rem 2.5rem 4rem;margin-top:68px;text-align:center}
+.art-page-badge{display:inline-block;padding:0.3rem 1rem;border-radius:20px;font-size:0.78rem;font-weight:700;color:white;margin-bottom:1.2rem}
+.art-page-title{font-family:'Amiri',serif;font-size:2.5rem;color:white;line-height:1.4;max-width:700px;margin:0 auto 1rem}
+.art-page-meta{color:rgba(255,255,255,0.5);font-size:0.85rem}
+.art-page-content{max-width:750px;margin:3rem auto;padding:0 2rem}
+.art-page-content h2{font-family:'Amiri',serif;font-size:1.7rem;color:var(--navy);margin:2.5rem 0 1rem;padding-right:1rem;border-right:4px solid var(--gold)}
+.art-page-content p{font-size:0.97rem;line-height:2.2;color:#2A2A3E;margin-bottom:1.5rem;font-weight:300}
+.art-page-content blockquote{background:var(--cream);border-right:4px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:2rem 0;font-family:'Amiri',serif;font-size:1.1rem;color:var(--navy);line-height:1.9}
+.art-back-btn{display:inline-flex;align-items:center;gap:0.5rem;color:var(--navy-mid);font-weight:600;font-size:0.9rem;margin:2rem 2rem 0;cursor:pointer;transition:all 0.3s}
+.art-back-btn:hover{color:var(--gold)}
+.about-page-hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 100%);padding:5rem 2.5rem;margin-top:68px}
+.about-page-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:center}
+.about-page-avatar{width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,rgba(184,134,11,0.25),rgba(184,134,11,0.05));border:2px solid rgba(184,134,11,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:'Amiri',serif;font-size:6rem;color:var(--gold-light)}
+.about-page-info h1{font-family:'Amiri',serif;font-size:2.5rem;color:white;margin-bottom:0.5rem}
+.about-page-role{color:var(--gold-light);font-size:1rem;letter-spacing:2px;margin-bottom:1.5rem;display:block}
+.about-page-bio{color:rgba(255,255,255,0.8);font-size:0.95rem;line-height:2.2;font-weight:300}
+.about-sections{max-width:1000px;margin:4rem auto;padding:0 2.5rem}
+.about-section-block{margin-bottom:3rem;padding:2rem;background:white;border-radius:16px;box-shadow:0 4px 20px var(--shadow)}
+.about-section-block h3{font-family:'Amiri',serif;font-size:1.5rem;color:var(--navy);margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:2px solid var(--gold-pale)}
+.about-section-block p{font-size:0.92rem;line-height:2.1;color:var(--text-muted);font-weight:300}
+.goals-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:1rem}
+.goals-list li{display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:var(--text);padding:0.7rem;background:var(--cream);border-radius:8px}
+.goals-list li::before{content:'✦';color:var(--gold);font-size:0.7rem;flex-shrink:0}
+.library-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.book-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 15px var(--shadow);transition:all 0.3s;text-align:center}
+.book-card:hover{transform:translateY(-5px)}
+.book-cover{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative}
+.book-badge{position:absolute;bottom:0;left:0;right:0;background:rgba(10,35,66,0.8);color:white;font-size:0.7rem;padding:0.3rem;text-align:center}
+.book-info{padding:1rem}
+.book-title{font-family:'Amiri',serif;font-size:0.95rem;color:var(--text);margin-bottom:0.3rem;line-height:1.5}
+.book-author{font-size:0.75rem;color:var(--text-muted)}
+.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.quote-card{background:white;border-radius:14px;padding:2rem;box-shadow:0 4px 20px var(--shadow);position:relative;overflow:hidden}
+.quote-card::before{content:'"';font-family:'Amiri',serif;font-size:6rem;color:rgba(184,134,11,0.08);position:absolute;top:-0.5rem;right:1rem;line-height:1}
+.quote-card-text{font-family:'Amiri',serif;font-size:1.1rem;color:var(--navy);line-height:1.9;margin-bottom:1rem;position:relative}
+.quote-card-source{font-size:0.78rem;color:var(--gold);font-weight:600}
+@media(max-width:900px){nav{padding:0 1rem}.nav-menu{display:none}.nav-mobile-btn{display:block}.hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:3rem 1.5rem}.hero h1{font-size:2.5rem}.sec-wrap,.sec-wrap-full,.about-strip,.quotes-section{padding:3rem 1.5rem}.cats-grid{grid-template-columns:1fr}.arts-grid{grid-template-columns:repeat(2,1fr)}.about-strip-inner{grid-template-columns:1fr;gap:3rem}.contact-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}.about-page-inner{grid-template-columns:1fr;gap:2rem}.library-grid{grid-template-columns:repeat(2,1fr)}.quotes-grid{grid-template-columns:1fr}.goals-list{grid-template-columns:1fr}.about-goals{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-brand">
-    <div class="nav-logo-icon">م</div>
-    <span class="nav-brand-name">محمد عطية ليمان</span>
+<nav id="main-nav">
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-logo">م</div>
+    <div><div class="nav-title">محمد عطية ليمان</div><span class="nav-subtitle">الثقافة الإسلامية • الأدب العربي • المعرفة النافعة</span></div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#">الرئيسية</a></li>
-    <li><a href="#islamic">الثقافة الإسلامية</a></li>
-    <li><a href="#arabic">الأدب العربي</a></li>
-    <li><a href="#general">الثقافة العامة</a></li>
-    <li><a href="#articles">المقالات</a></li>
-    <li><a href="#contact">تواصل معنا</a></li>
+  <ul class="nav-menu" id="nav-menu">
+    <li><span onclick="showPage('home')">الرئيسية</span></li>
+    <li><span onclick="showPage('about')">من أنا</span></li>
+    <li><span onclick="showPage('islamic')">الثقافة الإسلامية</span></li>
+    <li><span onclick="showPage('arabic')">الأدب العربي</span></li>
+    <li><span onclick="showPage('general')">الثقافة العامة</span></li>
+    <li><span onclick="showPage('library')">المكتبة</span></li>
+    <li><span onclick="showPage('quotes')">اقتباسات</span></li>
+    <li><span onclick="showPage('contact')">تواصل معنا</span></li>
   </ul>
-  <div class="nav-search">🔍</div>
+  <button class="nav-mobile-btn" onclick="toggleMenu()">☰</button>
 </nav>
+
+<div id="page-home" class="page active">
 <div class="hero">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
   <div class="hero-inner">
-    <div class="hero-text">
-      <span class="hero-badge">﷽ مرحباً بكم</span>
-      <h1>في الموقع الرسمي لـ<span>محمد عطية ليمان</span></h1>
-      <p class="hero-desc">منصة ثقافية تهتم بالثقافة الإسلامية والأدب العربي والثقافة العامة، نسعى إلى نشر المعرفة الهادفة والمحتوى الراقي بأسلوب عصري وأصيل.</p>
-      <div class="hero-ayah">
-        <p>وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
-        <span>سورة طه : 114</span>
-      </div>
+    <div>
+      <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span>مرحباً بكم في الموقع الرسمي</span></div>
+      <h1>محمد عطية<em>ليمان</em></h1>
+      <p class="hero-tagline">الثقافة الإسلامية • الأدب العربي • المعرفة النافعة</p>
+      <p class="hero-desc">منصة ثقافية تجمع بين أصالة الإسلام وجمال اللغة العربية وثراء المعرفة الإنسانية، نسعى إلى نشر المعرفة الهادفة وتعزيز الوعي الثقافي.</p>
+      <div class="hero-ayah"><p>وَقُل رَّبِّ زِدْنِي عِلْمًا</p><cite>سورة طه : 114</cite></div>
       <div class="hero-btns">
-        <a href="#articles" class="btn-primary">استكشف المقالات</a>
-        <a href="#contact" class="btn-secondary">تواصل معي</a>
+        <button class="btn-gold" onclick="showPage('islamic')">اقرأ المقالات</button>
+        <button class="btn-outline" onclick="showPage('about')">تعرف عليّ</button>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-cards-row">
-        <div class="hero-card"><span class="hero-card-icon">🕌</span><h3>الثقافة الإسلامية</h3><p>مقالات دينية وتفسير وسيرة نبوية</p></div>
-        <div class="hero-card"><span class="hero-card-icon">📜</span><h3>الأدب العربي</h3><p>شعر وبلاغة واقتباسات فصيحة</p></div>
+      <div class="hero-stat-cards">
+        <div class="h-stat"><span class="h-stat-num">+20</span><div class="h-stat-label">مقالة ثقافية</div></div>
+        <div class="h-stat"><span class="h-stat-num">3</span><div class="h-stat-label">أقسام متخصصة</div></div>
+        <div class="h-stat"><span class="h-stat-num">+50</span><div class="h-stat-label">كتاب في المكتبة</div></div>
+        <div class="h-stat"><span class="h-stat-num">2024</span><div class="h-stat-label">سنة الإطلاق</div></div>
       </div>
-      <div class="hero-card"><span class="hero-card-icon">🌍</span><h3>الثقافة العامة</h3><p>كتب وتاريخ وعلوم ومعلومات ثقافية متنوعة تثري العقل وتوسع الآفاق</p></div>
+      <div class="h-quote-card"><p>العلم يرفع بيوتًا لا عماد لها، والجهل يهدم بيوت العز والشرف</p><span>— حكمة عربية</span></div>
     </div>
   </div>
 </div>
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat-item"><span class="stat-num">+50</span><div class="stat-label">مقالة ثقافية</div></div>
-    <div class="stat-item"><span class="stat-num">3</span><div class="stat-label">أقسام متخصصة</div></div>
-    <div class="stat-item"><span class="stat-num">+1K</span><div class="stat-label">متابع على المنصات</div></div>
-    <div class="stat-item"><span class="stat-num">2024</span><div class="stat-label">سنة الإطلاق</div></div>
-  </div>
-</div>
-<div class="section-full" id="islamic">
-  <div class="section-full-inner">
+
+<div class="sec-wrap-full">
+  <div class="sec-wrap-full-inner">
     <div class="sec-head">
-      <span class="sec-tag">أقسام المنصة</span>
+      <div class="sec-eyebrow"><span>أقسام المنصة</span></div>
       <h2 class="sec-title">استكشف محتوانا الثقافي</h2>
-      <div class="sec-divider"><span>✦</span></div>
+      <div class="sec-underline"></div>
     </div>
-    <div class="categories-grid">
-      <div class="cat-card">
-        <div class="cat-img" style="background:linear-gradient(135deg,#1A6FA8,#0D3B6E)">
-          <div class="cat-img-overlay"></div>
-          <div class="cat-icon-wrap">🕌</div>
+    <div class="cats-grid">
+      <div class="cat-card" onclick="showPage('islamic')">
+        <div class="cat-banner" style="background:linear-gradient(160deg,#0A2342,#1A3A5C)">
+          <div class="cat-banner-overlay"></div><span class="cat-banner-emoji">🕌</span>
+          <span class="cat-banner-title">الثقافة الإسلامية</span>
         </div>
-        <div class="cat-body">
-          <h3 class="cat-title">الثقافة الإسلامية</h3>
-          <p class="cat-desc">مقالات دينية، تفسير، سيرة، أخلاق، وفوائد إسلامية نافعة بأسلوب عصري ومؤثر.</p>
-          <a href="#" class="cat-btn">استكشف القسم ←</a>
-        </div>
+        <div class="cat-body"><p class="cat-desc">مقالات دينية، تفسير، سيرة نبوية، أخلاق إسلامية، وفوائد نافعة بأسلوب عصري ومؤثر يخاطب العقل والقلب.</p><span class="cat-btn">استكشف القسم ←</span></div>
       </div>
-      <div class="cat-card" id="arabic">
-        <div class="cat-img" style="background:linear-gradient(135deg,#1A8A4A,#0D5A30)">
-          <div class="cat-img-overlay"></div>
-          <div class="cat-icon-wrap">📜</div>
+      <div class="cat-card" onclick="showPage('arabic')">
+        <div class="cat-banner" style="background:linear-gradient(160deg,#1A4A2A,#2A6B3A)">
+          <div class="cat-banner-overlay"></div><span class="cat-banner-emoji">📜</span>
+          <span class="cat-banner-title">الأدب العربي</span>
         </div>
-        <div class="cat-body">
-          <h3 class="cat-title">الأدب العربي</h3>
-          <p class="cat-desc">شعر، بلاغة، نصوص أدبية، واقتباسات عربية فصيحة تُبرز جمال اللغة العربية.</p>
-          <a href="#" class="cat-btn">استكشف القسم ←</a>
-        </div>
+        <div class="cat-body"><p class="cat-desc">شعر، بلاغة، نصوص أدبية، واقتباسات عربية فصيحة تُبرز جمال اللغة العربية وتُحيي روح التراث الأدبي.</p><span class="cat-btn">استكشف القسم ←</span></div>
       </div>
-      <div class="cat-card" id="general">
-        <div class="cat-img" style="background:linear-gradient(135deg,#E67E22,#A04000)">
-          <div class="cat-img-overlay"></div>
-          <div class="cat-icon-wrap">🌍</div>
+      <div class="cat-card" onclick="showPage('general')">
+        <div class="cat-banner" style="background:linear-gradient(160deg,#5C3D1E,#8B5E2E)">
+          <div class="cat-banner-overlay"></div><span class="cat-banner-emoji">🌍</span>
+          <span class="cat-banner-title">الثقافة العامة</span>
         </div>
-        <div class="cat-body">
-          <h3 class="cat-title">الثقافة العامة</h3>
-          <p class="cat-desc">كتب، تاريخ، علوم، تطوير الذات، ومعلومات ثقافية متنوعة توسع المدارك.</p>
-          <a href="#" class="cat-btn">استكشف القسم ←</a>
-        </div>
+        <div class="cat-body"><p class="cat-desc">كتب، تاريخ، علوم، تطوير الذات، وشخصيات غيرت مجرى التاريخ — معرفة متنوعة توسع المدارك وتثري العقول.</p><span class="cat-btn">استكشف القسم ←</span></div>
       </div>
     </div>
   </div>
 </div>
-<div class="section" id="articles">
+
+<hr class="sep-line">
+<div class="sec-wrap">
   <div class="sec-head">
-    <span class="sec-tag">أحدث المقالات</span>
+    <div class="sec-eyebrow"><span>أحدث المقالات</span></div>
     <h2 class="sec-title">مقالات مختارة</h2>
-    <div class="sec-divider"><span>✦</span></div>
+    <div class="sec-underline"></div>
   </div>
-  <div class="articles-grid">
-    <div class="article-card">
-      <div class="article-img">📖<span class="article-cat-badge badge-islamic">إسلامية</span></div>
-      <div class="article-body"><h3 class="article-title">تأملات في آيات القرآن الكريم</h3><div class="article-date">📅 20 مايو 2024</div></div>
-    </div>
-    <div class="article-card">
-      <div class="article-img">✒️<span class="article-cat-badge badge-arabic">أدب عربي</span></div>
-      <div class="article-body"><h3 class="article-title">بلاغة اللغة العربية وجمالها</h3><div class="article-date">📅 18 مايو 2024</div></div>
-    </div>
-    <div class="article-card">
-      <div class="article-img">🌐<span class="article-cat-badge badge-general">ثقافة عامة</span></div>
-      <div class="article-body"><h3 class="article-title">تاريخ المسلمين وإنجازاتهم</h3><div class="article-date">📅 15 مايو 2024</div></div>
-    </div>
-    <div class="article-card">
-      <div class="article-img">💡<span class="article-cat-badge badge-islamic">إسلامية</span></div>
-      <div class="article-body"><h3 class="article-title">أدب الحكمة وأقوال المبدعين</h3><div class="article-date">📅 12 مايو 2024</div></div>
-    </div>
+  <div class="arts-grid">
+    <div class="art-card" onclick="showArticle('islamic1')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">📖<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">الثقافة الإسلامية وأثرها في بناء الفرد والمجتمع</h3><div class="art-meta"><span>📅 مايو 2024</span></div></div></div>
+    <div class="art-card" onclick="showArticle('arabic1')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">✒️<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">جمال اللغة العربية وسر خلودها عبر الأجيال</h3><div class="art-meta"><span>📅 أبريل 2024</span></div></div></div>
+    <div class="art-card" onclick="showArticle('general1')"><div class="art-thumb" style="background:linear-gradient(135deg,#F5EEE8,#F0DCC8)">📚<span class="art-badge badge-general">ثقافة عامة</span></div><div class="art-body"><h3 class="art-title">أفضل 50 كتاباً لتوسيع الثقافة وتنمية العقل</h3><div class="art-meta"><span>📅 مارس 2024</span></div></div></div>
+    <div class="art-card" onclick="showArticle('islamic2')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">🌙<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">طلب العلم بين العبادة والحضارة في الإسلام</h3><div class="art-meta"><span>📅 فبراير 2024</span></div></div></div>
   </div>
 </div>
+
 <div class="about-strip">
   <div class="about-strip-inner">
-    <div>
+    <div class="about-avatar"><span class="about-avatar-initials">م ع</span></div>
+    <div class="about-content">
       <h2>من أنا؟</h2>
-      <p>أنا محمد عطية ليمان، صانع محتوى ثقافي وإسلامي وطالب جامعي أسعى إلى بناء حضور رقمي احترافي يجمع بين الثقافة الإسلامية الأصيلة، والأدب العربي الرفيع، والمعرفة العامة الواسعة.</p>
-      <p>أعمل على إنشاء هوية رقمية قوية تحمل طابعاً هادئاً وفخماً يعكس العلم والوعي، مع اهتمام واضح بجمال التصميم ودقة التفاصيل.</p>
-      <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:1.5rem">تواصل معي</a>
-    </div>
-    <div class="about-features">
-      <div class="feature"><span class="feature-icon">🕌</span><h4>الثقافة الإسلامية</h4><p>محتوى ديني هادف بأسلوب عصري</p></div>
-      <div class="feature"><span class="feature-icon">📜</span><h4>الأدب العربي</h4><p>لغة عربية فصيحة وبلاغة راقية</p></div>
-      <div class="feature"><span class="feature-icon">🌍</span><h4>الثقافة العامة</h4><p>معرفة متنوعة توسع الآفاق</p></div>
-      <div class="feature"><span class="feature-icon">🎨</span><h4>هوية بصرية</h4><p>تصميم احترافي ومتناسق</p></div>
+      <p>أنا محمد عطية ليمان، باحث مهتم بالثقافة الإسلامية والأدب العربي والثقافة العامة، يسعى إلى نشر المعرفة الهادفة وتعزيز الوعي الثقافي من خلال الكتابة والبحث وصناعة المحتوى الرقمي.</p>
+      <p>رسالتي إحياء قيمة العلم والقراءة والثقافة في حياة الشباب المسلم، وربط المعرفة المعاصرة بأصالة التراث الإسلامي.</p>
+      <div class="about-goals">
+        <div class="goal-item"><span class="goal-icon">📚</span><span class="goal-text">نشر الثقافة الإسلامية الصحيحة</span></div>
+        <div class="goal-item"><span class="goal-icon">✍️</span><span class="goal-text">خدمة اللغة العربية وإحياؤها</span></div>
+        <div class="goal-item"><span class="goal-icon">🔍</span><span class="goal-text">تشجيع القراءة والاطلاع</span></div>
+        <div class="goal-item"><span class="goal-icon">🌟</span><span class="goal-text">بناء منصة معرفية موثوقة</span></div>
+      </div>
+      <button class="btn-gold" onclick="showPage('about')" style="margin-top:2rem">اقرأ المزيد عني</button>
     </div>
   </div>
 </div>
-<div class="section" id="contact">
-  <div class="sec-head">
-    <span class="sec-tag">التواصل</span>
-    <h2 class="sec-title">تواصل معي</h2>
-    <div class="sec-divider"><span>✦</span></div>
-    <p style="color:var(--text-light);font-size:0.95rem;margin-top:1rem">"كل رحلة عظيمة تبدأ بحوار صادق"</p>
-  </div>
-  <div class="contact-links">
-    <a href="mailto:alatia315@gmail.com" class="clink"><span class="clink-icon">✉️</span>البريد الإلكتروني</a>
-    <a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="clink"><span class="clink-icon">💼</span>LinkedIn</a>
-    <a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="clink"><span class="clink-icon">🎵</span>تيك توك</a>
-    <a href="https://youtube.com/@atielimane" target="_blank" class="clink"><span class="clink-icon">▶️</span>يوتيوب</a>
-    <a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="clink"><span class="clink-icon">📘</span>فيسبوك</a>
+
+<div class="quotes-section">
+  <div class="quotes-inner">
+    <div class="sec-head">
+      <div class="sec-eyebrow"><span>اقتباسات مضيئة</span></div>
+      <h2 class="sec-title sec-title-white">حكم وأقوال</h2>
+      <div class="sec-underline"></div>
+    </div>
+    <div class="quote-display">
+      <span class="quote-mark">"</span>
+      <p class="quote-text" id="quote-text">العلم يرفع بيوتًا لا عماد لها، والجهل يهدم بيوت العز والشرف</p>
+      <p class="quote-source" id="quote-source">— حكمة عربية</p>
+    </div>
+    <div class="quote-dots" id="quote-dots"></div>
   </div>
 </div>
+
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>محمد عطية ليمان</h3>
-      <p>منصة ثقافية تهتم بالثقافة الإسلامية والأدب العربي والثقافة العامة.</p>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="social-btn">f</a>
-        <a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="social-btn">T</a>
-        <a href="https://youtube.com/@atielimane" target="_blank" class="social-btn">▶</a>
-        <a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="social-btn">in</a>
+    <div>
+      <div class="footer-brand-name">محمد عطية ليمان</div>
+      <div class="footer-brand-tagline">الثقافة الإسلامية • الأدب العربي • المعرفة النافعة</div>
+      <p class="footer-brand-desc">منصة ثقافية تجمع بين أصالة الإسلام وجمال اللغة العربية وثراء المعرفة الإنسانية.</p>
+      <div class="footer-social-row">
+        <a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="fsoc">f</a>
+        <a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="fsoc">T</a>
+        <a href="https://youtube.com/@atielimane" target="_blank" class="fsoc">▶</a>
+        <a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="fsoc">in</a>
       </div>
     </div>
     <div class="footer-col">
-      <h4>الأقسام</h4>
+      <div class="footer-col-title">الأقسام</div>
       <ul>
-        <li><a href="#">الثقافة الإسلامية</a></li>
-        <li><a href="#">الأدب العربي</a></li>
-        <li><a href="#">الثقافة العامة</a></li>
-        <li><a href="#">المقالات</a></li>
+        <li><span onclick="showPage('islamic')">الثقافة الإسلامية</span></li>
+        <li><span onclick="showPage('arabic')">الأدب العربي</span></li>
+        <li><span onclick="showPage('general')">الثقافة العامة</span></li>
+        <li><span onclick="showPage('library')">المكتبة الرقمية</span></li>
+        <li><span onclick="showPage('quotes')">الاقتباسات</span></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>روابط مهمة</h4>
+      <div class="footer-col-title">روابط مهمة</div>
       <ul>
-        <li><a href="#">الرئيسية</a></li>
-        <li><a href="#">من أنا</a></li>
-        <li><a href="#">تواصل معنا</a></li>
+        <li><span onclick="showPage('home')">الرئيسية</span></li>
+        <li><span onclick="showPage('about')">من أنا</span></li>
+        <li><span onclick="showPage('contact')">تواصل معنا</span></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>تابعنا</h4>
+      <div class="footer-col-title">تابعنا</div>
       <ul>
         <li><a href="https://www.tiktok.com/@mahamatatie" target="_blank">تيك توك</a></li>
         <li><a href="https://youtube.com/@atielimane" target="_blank">يوتيوب</a></li>
@@ -300,12 +347,177 @@ footer{background:#0D3B6E;padding:3rem;color:rgba(255,255,255,0.7)}
   </div>
   <div class="footer-bottom">
     <div class="footer-ayah">وَقُل رَّبِّ زِدْنِي عِلْمًا ✦ سورة طه : 114</div>
-    <div class="footer-copy">جميع الحقوق محفوظة © 2024 محمد عطية ليمان</div>
+    <div class="footer-copy">© 2024 محمد عطية ليمان — جميع الحقوق محفوظة</div>
   </div>
 </footer>
-<script>
-const nav=document.querySelector('nav');
-window.addEventListener('scroll',()=>{nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(26,111,168,0.15)':'0 2px 20px rgba(26,111,168,0.12)'});
-</script>
-</body>
-</html>
+</div>
+<div id="page-about" class="page">
+  <div class="about-page-hero">
+    <div class="about-page-inner">
+      <div class="about-page-avatar">م ع</div>
+      <div class="about-page-info">
+        <h1>محمد عطية ليمان</h1>
+        <span class="about-page-role">باحث ثقافي • صانع محتوى • طالب جامعي</span>
+        <p class="about-page-bio">باحث مهتم بالثقافة الإسلامية والأدب العربي والثقافة العامة، يسعى إلى نشر المعرفة الهادفة وتعزيز الوعي الثقافي من خلال الكتابة والبحث وصناعة المحتوى الرقمي.</p>
+      </div>
+    </div>
+  </div>
+  <div class="about-sections">
+    <div class="about-section-block"><h3>رسالتي</h3><p>إحياء قيمة العلم والقراءة والثقافة في حياة الشباب المسلم، وربط المعرفة المعاصرة بأصالة التراث الإسلامي.</p></div>
+    <div class="about-section-block"><h3>رؤيتي</h3><p>بناء منصة معرفية عربية وإفريقية موثوقة تجمع بين الثقافة الإسلامية والأدب العربي والمعرفة الإنسانية.</p></div>
+    <div class="about-section-block">
+      <h3>أهداف الموقع</h3>
+      <ul class="goals-list">
+        <li>نشر الثقافة الإسلامية الصحيحة</li>
+        <li>خدمة اللغة العربية وإحياؤها</li>
+        <li>تشجيع القراءة والاطلاع</li>
+        <li>نشر المقالات والدراسات الثقافية</li>
+        <li>توفير مكتبة معرفية متجددة</li>
+        <li>بناء حضور رقمي احترافي مؤثر</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="page-islamic" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge badge-islamic">الثقافة الإسلامية</span>
+    <h1 class="art-page-title">مقالات في الثقافة الإسلامية</h1>
+    <p class="art-page-meta">محتوى إسلامي هادف بأسلوب عصري ومؤثر</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="arts-grid">
+      <div class="art-card" onclick="showArticle('islamic1')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">📖<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">الثقافة الإسلامية وأثرها في بناء الفرد والمجتمع</h3><div class="art-meta"><span>📅 مايو 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('islamic2')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">🌙<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">طلب العلم بين العبادة والحضارة في الإسلام</h3><div class="art-meta"><span>📅 أبريل 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('islamic3')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">🤝<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">الصدق والأمانة في الإسلام — قيم خالدة</h3><div class="art-meta"><span>📅 مارس 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('islamic4')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">⭐<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">مكانة الأخلاق في بناء الأمة الإسلامية</h3><div class="art-meta"><span>📅 فبراير 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('islamic5')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F0F8,#D0E4F5)">🌟<span class="art-badge badge-islamic">إسلامية</span></div><div class="art-body"><h3 class="art-title">نماذج مضيئة من علماء الإسلام عبر التاريخ</h3><div class="art-meta"><span>📅 يناير 2024</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-arabic" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge badge-arabic">الأدب العربي</span>
+    <h1 class="art-page-title">مقالات في الأدب العربي</h1>
+    <p class="art-page-meta">اللغة العربية كنز لا يُقدَّر</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="arts-grid">
+      <div class="art-card" onclick="showArticle('arabic1')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">✒️<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">جمال اللغة العربية وسر خلودها عبر الأجيال</h3><div class="art-meta"><span>📅 مايو 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('arabic2')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">📝<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">البلاغة العربية بين البيان والإبداع</h3><div class="art-meta"><span>📅 أبريل 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('arabic3')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">🎭<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">الشعر العربي من الجاهلية إلى العصر الحديث</h3><div class="art-meta"><span>📅 مارس 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('arabic4')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">👑<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">أشهر شعراء العربية وأثرهم الثقافي الخالد</h3><div class="art-meta"><span>📅 فبراير 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('arabic5')"><div class="art-thumb" style="background:linear-gradient(135deg,#E8F5EC,#D0F0D8)">🛡️<span class="art-badge badge-arabic">أدب عربي</span></div><div class="art-body"><h3 class="art-title">الأدب العربي ودوره في حفظ الهوية والانتماء</h3><div class="art-meta"><span>📅 يناير 2024</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-general" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge badge-general">الثقافة العامة</span>
+    <h1 class="art-page-title">مقالات في الثقافة العامة</h1>
+    <p class="art-page-meta">معرفة تنمي العقل وتوسع الآفاق</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="arts-grid">
+      <div class="art-card" onclick="showArticle('general1')"><div class="art-thumb" style="background:linear-gradient(135deg,#F5EEE8,#F0DCC8)">📚<span class="art-badge badge-general">ثقافة عامة</span></div><div class="art-body"><h3 class="art-title">أفضل 50 كتاباً لتوسيع الثقافة وتنمية العقل</h3><div class="art-meta"><span>📅 مايو 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('general2')"><div class="art-thumb" style="background:linear-gradient(135deg,#F5EEE8,#F0DCC8)">🏛️<span class="art-badge badge-general">ثقافة عامة</span></div><div class="art-body"><h3 class="art-title">شخصيات غيرت مجرى التاريخ الإنساني</h3><div class="art-meta"><span>📅 أبريل 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('general3')"><div class="art-thumb" style="background:linear-gradient(135deg,#F5EEE8,#F0DCC8)">🧠<span class="art-badge badge-general">ثقافة عامة</span></div><div class="art-body"><h3 class="art-title">كيف تصبح قارئاً محترفاً في 30 يوماً</h3><div class="art-meta"><span>📅 مارس 2024</span></div></div></div>
+      <div class="art-card" onclick="showArticle('general4')"><div class="art-thumb" style="background:linear-gradient(135deg,#F5EEE8,#F0DCC8)">⚡<span class="art-badge badge-general">ثقافة عامة</span></div><div class="art-body"><h3 class="art-title">أسرار اكتساب المعرفة بسرعة وفاعلية</h3><div class="art-meta"><span>📅 فبراير 2024</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-library" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge badge-library">المكتبة الرقمية</span>
+    <h1 class="art-page-title">المكتبة الرقمية</h1>
+    <p class="art-page-meta">كتب إسلامية وأدبية وثقافية مختارة بعناية</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="sec-head"><div class="sec-eyebrow"><span>كتب إسلامية</span></div><h2 class="sec-title">أمهات الكتب الإسلامية</h2><div class="sec-underline"></div></div>
+    <div class="library-grid">
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A3A5C,#2E5F8A)">📕<div class="book-badge">إسلامي</div></div><div class="book-info"><div class="book-title">الرحيق المختوم</div><div class="book-author">صفي الرحمن المباركفوري</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A3A5C,#2E5F8A)">📗<div class="book-badge">إسلامي</div></div><div class="book-info"><div class="book-title">رياض الصالحين</div><div class="book-author">الإمام النووي</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A3A5C,#2E5F8A)">📘<div class="book-badge">إسلامي</div></div><div class="book-info"><div class="book-title">الأربعون النووية</div><div class="book-author">الإمام النووي</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A3A5C,#2E5F8A)">📙<div class="book-badge">إسلامي</div></div><div class="book-info"><div class="book-title">مختصر تفسير ابن كثير</div><div class="book-author">ابن كثير الدمشقي</div></div></div>
+    </div>
+    <div class="sec-head" style="margin-top:4rem"><div class="sec-eyebrow"><span>كتب أدبية</span></div><h2 class="sec-title">روائع الأدب العربي</h2><div class="sec-underline"></div></div>
+    <div class="library-grid">
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A4A2A,#2A6B3A)">📕<div class="book-badge">أدبي</div></div><div class="book-info"><div class="book-title">البيان والتبيين</div><div class="book-author">الجاحظ</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A4A2A,#2A6B3A)">📗<div class="book-badge">أدبي</div></div><div class="book-info"><div class="book-title">ديوان المتنبي</div><div class="book-author">أبو الطيب المتنبي</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A4A2A,#2A6B3A)">📘<div class="book-badge">أدبي</div></div><div class="book-info"><div class="book-title">كليلة ودمنة</div><div class="book-author">ابن المقفع</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1A4A2A,#2A6B3A)">📙<div class="book-badge">أدبي</div></div><div class="book-info"><div class="book-title">مقامات الحريري</div><div class="book-author">الحريري البصري</div></div></div>
+    </div>
+    <div class="sec-head" style="margin-top:4rem"><div class="sec-eyebrow"><span>كتب ثقافية</span></div><h2 class="sec-title">كتب تنمية وثقافة</h2><div class="sec-underline"></div></div>
+    <div class="library-grid">
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#5C3D1E,#8B5E2E)">📕<div class="book-badge">ثقافي</div></div><div class="book-info"><div class="book-title">العادات الذرية</div><div class="book-author">جيمس كلير</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#5C3D1E,#8B5E2E)">📗<div class="book-badge">ثقافي</div></div><div class="book-info"><div class="book-title">قوة التركيز</div><div class="book-author">كال نيوبورت</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#5C3D1E,#8B5E2E)">📘<div class="book-badge">ثقافي</div></div><div class="book-info"><div class="book-title">فن اللامبالاة</div><div class="book-author">مارك مانسون</div></div></div>
+      <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#5C3D1E,#8B5E2E)">📙<div class="book-badge">ثقافي</div></div><div class="book-info"><div class="book-title">فكر وازدد ثراءً</div><div class="book-author">نابليون هيل</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-quotes" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge" style="background:var(--gold)">اقتباسات</span>
+    <h1 class="art-page-title">حكم وأقوال مضيئة</h1>
+    <p class="art-page-meta">من كلام العلماء والحكماء والأدباء</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="quotes-grid">
+      <div class="quote-card"><p class="quote-card-text">العلم يرفع بيوتًا لا عماد لها، والجهل يهدم بيوت العز والشرف</p><span class="quote-card-source">— حكمة عربية</span></div>
+      <div class="quote-card"><p class="quote-card-text">من سلك طريقًا يلتمس فيه علمًا سهّل الله له به طريقًا إلى الجنة</p><span class="quote-card-source">— الحديث النبوي الشريف</span></div>
+      <div class="quote-card"><p class="quote-card-text">قيمة الإنسان فيما يحسن لا فيما يملك</p><span class="quote-card-source">— الإمام علي كرم الله وجهه</span></div>
+      <div class="quote-card"><p class="quote-card-text">تعلم فليس المرء يولد عالمًا، وليس أخو علم كمن هو جاهل</p><span class="quote-card-source">— الشاعر العربي</span></div>
+      <div class="quote-card"><p class="quote-card-text">من لم يذق مر التعلم ساعة تجرع ذل الجهل طول حياته</p><span class="quote-card-source">— الإمام الشافعي</span></div>
+      <div class="quote-card"><p class="quote-card-text">الكتاب خير جليس في الزمان لا يُطريك كذبًا ولا يغتابك عند الناس</p><span class="quote-card-source">— ابن عبد ربه</span></div>
+      <div class="quote-card"><p class="quote-card-text">على قدر أهل العزم تأتي العزائم وتأتي على قدر الكرام المكارم</p><span class="quote-card-source">— المتنبي</span></div>
+      <div class="quote-card"><p class="quote-card-text">العلم في الصغر كالنقش على الحجر</p><span class="quote-card-source">— مثل عربي</span></div>
+      <div class="quote-card"><p class="quote-card-text">اللغة وعاء الفكر والأدب مرآة الروح</p><span class="quote-card-source">— حكمة أدبية</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-contact" class="page">
+  <div class="art-page-header">
+    <span class="art-page-badge" style="background:var(--navy-light)">تواصل معنا</span>
+    <h1 class="art-page-title">تواصل معي</h1>
+    <p class="art-page-meta">"كل رحلة عظيمة تبدأ بحوار صادق"</p>
+  </div>
+  <div class="sec-wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>طرق التواصل</h3>
+        <p>يسعدني التواصل معكم في أي وقت، سواء كانت لديكم أسئلة أو اقتراحات أو رغبة في التعاون.</p>
+        <div class="contact-social">
+          <a href="mailto:alatia315@gmail.com" class="social-item"><span class="social-item-icon">✉️</span><span>alatia315@gmail.com</span></a>
+          <a href="https://www.tiktok.com/@mahamatatie" target="_blank" class="social-item"><span class="social-item-icon">🎵</span><span>تيك توك — @mahamatatie</span></a>
+          <a href="https://youtube.com/@atielimane" target="_blank" class="social-item"><span class="social-item-icon">▶️</span><span>يوتيوب — @atielimane</span></a>
+          <a href="https://www.facebook.com/share/1Ebb1KcWRy/" target="_blank" class="social-item"><span class="social-item-icon">📘</span><span>فيسبوك</span></a>
+          <a href="https://www.linkedin.com/in/محمد-عطية-ليمان-1326a2351" target="_blank" class="social-item"><span class="social-item-icon">💼</span><span>LinkedIn</span></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>أرسل رسالة</h3>
+        <div class="form-group"><label>الاسم</label><input type="text" placeholder="اسمك الكريم"></div>
+        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="بريدك الإلكتروني"></div>
+        <div class="form-group"><label>الموضوع</label><input type="text" placeholder="موضوع الرسالة"></div>
+        <div class="form-group"><label>الرسالة</label><textarea placeholder="اكتب رسالتك هنا..."></textarea></div>
+        <button class="btn-submit" onclick="alert('شكراً على رسالتك! سأرد عليك قريباً إن شاء الله')">إرسال الرسالة ✉️</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="page-article" class="page">
+  <span class="art-back-btn" id="art-back-btn" onclick="goBack()">← العودة</span>
+  <div class="art-page-header">
+    <span class="art-page-badge" id="art-badge">إسلامية</span>
+    <h1 class="art-page-title" id="art-title">عنوان المقال</h1>
+    <p class="art-page-meta" id="art-meta">📅 2024</p>
+  </div>
+  <div class="art-page-content" id="art-content"></div>
+                                                                                                                   </div>
